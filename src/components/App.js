@@ -6,16 +6,14 @@ import {
   Routes,
   Link
 } from 'react-router-dom';
-import Home from './Home';
+import Home from '../pages/Home';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+      <div>
+        <header className="flex justify-center items-center text-[40px] font-bold w-screen h-[60px] bg-blue-300">
+          <h1 className='mr-[40px]'>RF-AMSBD</h1>
           <nav>
             <ul>
               <li><Link to="/">Home</Link></li>
