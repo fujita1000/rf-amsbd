@@ -6,9 +6,7 @@ import {
   Routes,
   Link
 } from 'react-router-dom';
-import Home from './components/Home';
-import One from './components/One';  
-import Two from './components/Two';
+import Home from './Home';
 
 function App() {
   return (
@@ -21,15 +19,11 @@ function App() {
           <nav>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/one">Page One</Link></li>
-              <li><Link to="/two">Page Two</Link></li>
             </ul>
           </nav>
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/one" element={<One />} />  
-          <Route path="/two" element={<Two />} />
         </Routes>
       </div>
     </Router>
