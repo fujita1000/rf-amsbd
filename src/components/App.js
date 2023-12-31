@@ -4,26 +4,20 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Link
 } from 'react-router-dom';
+import Layout from '../components/Layout/Layout'; 
 import Home from '../pages/Home';
+import Thread from '../pages/Thread'; 
 
 function App() {
   return (
     <Router>
-      <div>
-        <header className="flex justify-center items-center text-[40px] font-bold w-screen h-[60px] bg-blue-300">
-          <h1 className='mr-[40px]'>RF-AMSBD</h1>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-            </ul>
-          </nav>
-        </header>
+      <Layout> 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:threadId" element={<Thread />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
 }
