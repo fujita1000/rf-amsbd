@@ -40,7 +40,7 @@ const Search = () => {
   }, [location.search]);
 
   return (
-    <div>
+    <div className="container m-auto my-8 w-[95%]">
       <h2>検索結果</h2>
       <SearchResults results={searchResults} />
     </div>

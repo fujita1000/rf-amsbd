@@ -72,14 +72,14 @@ const ThreadForm = ({ onThreadCreate, onCloseModal }) => {
 
       <label className="block mb-2 mt-4">スレッドの説明:</label>
       <textarea
-        className="w-full p-2 border rounded"
-        placeholder="スレッドの説明を作成してください"
+        className="w-full p-2 border rounded h-[200px]"
+        placeholder="スレッドの説明を入力してください"
         value={threadDescription}
         onChange={handleThreadDescriptionChange}
       ></textarea>
 
       <button
-        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
+        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded cursor-pointer w-full"
         onClick={handleCreateThread}
       >
         スレッドを作成

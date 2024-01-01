@@ -3,11 +3,8 @@
 import React from 'react';
 import AllThread from '../components/Threads/AllThread';
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { useSidebar } from '../lib/logic';
 
 const Home = () => {
-
-  const { closeSidebar } = useSidebar();
   
   return (
     <>

@@ -83,38 +83,53 @@ const Thread = () => {
   };
 
   return (
-    <div>
-      <p>Title: {threadData.title}</p>
-      <p>Description: {threadData.description}</p> 
+    <div className="container m-auto my-8 w-[95%]">
+      <h1 className='text-[24px]'>{threadData.title}</h1>
+      <p>{threadData.description}</p> 
 
-      <div>
+      <h2 className='my-[20px]'>コメント欄↓</h2>
+
+      <div className='mt-[100px]'>
         {/* メッセージ表示部分 */}
         {messages.map(message => (
-          <div key={message.id}>
+          <div key={message.id} className='my-[15px]'>
             <p>{message.username}: {message.text}</p>
             <p>投稿日時: {message.createdAt?.toDate().toLocaleString()}</p>
           </div>
         ))}
       </div>
 
+      <div className="max-w-md mx-auto p-4 bg-white rounded-md shadow-md">
       {/* 名前入力フォーム */}
-      <label>
-        名前:
+      <div className="mb-4">
+        <label className="block text-sm font-semibold text-gray-600 mb-1">名前:</label>
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
         />
-      </label>
+      </div>
 
       {/* メッセージ入力フォーム */}
-      <div>
+      <div className="mb-4">
+        <label className="block text-sm font-semibold text-gray-600 mb-1">メッセージ:</label>
         <textarea
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          rows="4"
         />
-        <button onClick={handleSendMessage}>メッセージを送信</button>
       </div>
+
+      <button
+        onClick={handleSendMessage}
+        className="bg-blue-500 w-full text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+      >
+        メッセージを送信
+      </button>
+    </div>
+
     </div>
   );
 };

@@ -59,8 +59,8 @@ const Header = () => {
         exit={{ x: '-100%' }}
         transition={{ type: 'tween', ease: 'linear', duration: 0.2 }} // トランジションを線形に変更
         >
-            <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
-              <Link to="/" className="font-medium text-blue-600 md:py-6 dark:text-blue-500" aria-current="page">HOME</Link>
+            <div className="mx-[10px] flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+              <Link to="/" className=" text-[20px] font-medium text-blue-600 md:py-6 dark:text-blue-500" aria-current="page">HOME</Link>
               <SearchForm onSearch={handleSearch} />
               <div className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" href="#">
                 <button onClick={openModal} className='flex justify-center items-center'>
