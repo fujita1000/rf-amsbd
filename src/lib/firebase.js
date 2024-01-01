@@ -1,7 +1,7 @@
 // lib/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, addDoc, serverTimestamp, getDocs, doc ,onSnapshot } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, serverTimestamp, getDocs, doc ,onSnapshot, query, where } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -17,4 +17,4 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-export { app, analytics, db, collection, addDoc, getDocs, doc, serverTimestamp, onSnapshot };
+export { app, analytics, db, collection, addDoc, getDocs, doc, serverTimestamp, onSnapshot, query, where };

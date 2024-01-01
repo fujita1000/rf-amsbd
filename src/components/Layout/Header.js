@@ -1,13 +1,19 @@
 // Header.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Modal from '../Threads/Modal';
 import { useModal, useSidebar } from '../../lib/logic';
+import SearchForm from '../../components/Search/SearchForm';
 
 const Header = () => {
   const { ModalOpen, openModal, closeModal } = useModal();
   const { sidebarOpen, openSidebar, closeSidebar } = useSidebar();
+  const navigate = useNavigate();
+
+  const handleSearch = (searchTerm) => {
+    navigate(`/search?term=${encodeURIComponent(searchTerm)}`);
+  };
 
   return (
     <>
@@ -31,6 +37,9 @@ const Header = () => {
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
               <Link to="/" className="font-medium text-blue-600 md:py-6 dark:text-blue-500" aria-current="page">HOME</Link>
               <div className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" href="#">
+                 {/* 検索フォーム */}
+                <SearchForm onSearch={handleSearch} />
+                 {/* 検索フォーム */}
                 <button onClick={openModal} className='flex justify-center items-center'>
                   <img src="/images/kizi.svg" alt="スレッド作成ボタン" className="h-[40px] w-[40px] mr-[10px]"/>
                   スレッドを作成
@@ -52,6 +61,7 @@ const Header = () => {
         >
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
               <Link to="/" className="font-medium text-blue-600 md:py-6 dark:text-blue-500" aria-current="page">HOME</Link>
+              <SearchForm onSearch={handleSearch} />
               <div className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" href="#">
                 <button onClick={openModal} className='flex justify-center items-center'>
                   <img src="/images/kizi.svg" alt="スレッド作成ボタン" className="h-[40px] w-[40px] mr-[10px]"/>

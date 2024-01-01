@@ -8,6 +8,7 @@ import {
 import Layout from '../components/Layout/Layout'; 
 import Home from '../pages/Home';
 import Thread from '../pages/Thread'; 
+import Search from '../pages/Search';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Layout> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:threadId" element={<Thread />} />
+          <Route path="threads/:threadId" element={<Thread />} />
+          <Route path="search" element={<Search />} />
         </Routes>
       </Layout>
     </Router>

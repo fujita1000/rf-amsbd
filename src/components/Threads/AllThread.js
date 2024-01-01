@@ -41,7 +41,7 @@ const AllThread = () => {
       <ul>
         {threads.map(thread => (
           <li key={thread.id} className='mb-[20px]'>
-            <Link to={`/${thread.id}`}>
+            <Link to={`threads/${thread.id}`}>
               <h3 className='text-[20px] font-medium'>{thread.title}</h3>
               <p className="line-clamp-2 md:line-clamp-none">{thread.description}</p>
               <p>投稿日時:({thread.createdAt?.toDate().toLocaleString()})</p>
