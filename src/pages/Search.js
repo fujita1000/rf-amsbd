@@ -1,4 +1,5 @@
 // Search.js
+
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getDocs, query, collection, where, db } from '../lib/firebase';

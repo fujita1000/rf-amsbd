@@ -1,4 +1,4 @@
-// 例: src/components/Home.js
+// Home.js
 
 import React from 'react';
 import AllThread from '../components/Threads/AllThread';
